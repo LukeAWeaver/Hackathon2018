@@ -7,5 +7,5 @@ Bird Watcher was trained using the Keras machine learning library on the [Caltec
 # Who is it for?
 Anyone wanting to get outside and learn about nature and birds should use this app!
 
-# How to use it?
+# Where You Find it
 Bird Watcher will be coming to a local app store near you

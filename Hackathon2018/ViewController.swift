@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-
+    
     @IBOutlet var myImg: UIImageView!
     
     
@@ -25,7 +25,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         }
         picker.dismiss(animated: true, completion: nil)
     }
-
+    
     
     @IBAction func takePhoto(_ sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
@@ -35,7 +35,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             imagePicker.allowsEditing = false
             self.present(imagePicker,animated: true, completion:nil)
-        
+            
         }
     }
     

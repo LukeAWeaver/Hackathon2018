@@ -9,81 +9,36 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDelegate  {
+class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
-   
+    @IBOutlet var myImg: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeButtonCircle()
-        setupCaptureSession();
         
     }
-    
- 
-    
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//starts session for image to be captured
-    func setupCaptureSession() {
-        let captureSession = AVCaptureSession()
-        
-        // search for available capture devices
-        let availableDevices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back).devices
-        
-        // setup capture device, add input to our capture session
-        do {
-        if let captureDevice = availableDevices.first {
-        let captureDeviceInput = try AVCaptureDeviceInput(device: captureDevice)
-        captureSession.addInput(captureDeviceInput)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            myImg.contentMode = .scaleToFill
+            myImg.image = pickedImage
         }
-        } catch {
-        print(error.localizedDescription)
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    
+    @IBAction func takePhoto(_ sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+        {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker,animated: true, completion:nil)
+        
         }
-        
-        // setup output, add output to our capture session
-        let captureOutput = AVCaptureVideoDataOutput()
-        captureOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
-        captureSession.addOutput(captureOutput)
-        
-        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = view.frame
-        view.layer.addSublayer(previewLayer)
-        
-        captureSession.startRunning()
     }
     
-    
-
-    
-//make button circular
-    func makeButtonCircle(){
-        self.sampleText.layer.shadowColor = UIColor.black.cgColor
-        self.sampleText.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        self.sampleText.layer.masksToBounds = false
-        self.sampleText.layer.shadowRadius = 1.0
-        self.sampleText.layer.shadowOpacity = 0.5
-        self.sampleText.layer.cornerRadius = btn.frame.width / 2
-    }
-    
-    
-    
-
-    
-
-
-    
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

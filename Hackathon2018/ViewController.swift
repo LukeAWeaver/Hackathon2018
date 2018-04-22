@@ -41,6 +41,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             self.present(imagePicker,animated: true, completion:nil)
             
         }
+
+      
+
+
     }
 
     guard; let prediction = try? model.prediction(image: myImg!);else {

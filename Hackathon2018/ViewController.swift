@@ -8,12 +8,16 @@
 
 import UIKit
 import AVFoundation
+import CoreML
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
+    
+    let model = Bird()
+    
     @IBOutlet var myImg: UIImageView!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,14 +42,13 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             
         }
     }
-    
+
+    guard; let prediction = try? model.prediction(image: myImg!);else {
+        return prediction.predictionLabel
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
-
-
-
-

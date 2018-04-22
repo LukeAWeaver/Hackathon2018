@@ -7,16 +7,28 @@
 //
 
 import UIKit
-import AVFoundation
-import SpriteKit
+import CoreML
 
 class PredictionController: UIViewController{
     
+    let model = Bird()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
+    
+    guard; let prediction = try? model.prediction(image: myImg!);else {
+    return prediction.predictionLabel
+    }
+    
+    function check(){
+    if predictionLabel.text == "Hummingbird"{
+        
+    }
+    }
+    
     
 
     

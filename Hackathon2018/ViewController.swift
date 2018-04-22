@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import AVFoundation
-import SpriteKit
+
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
+    
     @IBOutlet var myImg: UIImageView!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,14 +43,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 
 
     }
-    
-    
+
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
-
-
-
-

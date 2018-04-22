@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4426D56C208BE7E300256E12 /* PredictionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426D56B208BE7E300256E12 /* PredictionController.swift */; };
 		44DD61BC208BA0420050EECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DD61BB208BA0420050EECE /* AppDelegate.swift */; };
 		44DD61BE208BA0420050EECE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DD61BD208BA0420050EECE /* ViewController.swift */; };
 		44DD61C1208BA0420050EECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44DD61BF208BA0420050EECE /* Main.storyboard */; };
@@ -138,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4426D56C208BE7E300256E12 /* PredictionController.swift in Sources */,
 				44DD61BE208BA0420050EECE /* ViewController.swift in Sources */,
 				44DD61BC208BA0420050EECE /* AppDelegate.swift in Sources */,
 			);
@@ -291,6 +289,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/virtualenvs/.venv",
+					"$(PROJECT_DIR)/virtualenvs/.venv/lib/python3.5/config-3.5m",
+					"$(PROJECT_DIR)/virtualenvs/pythonenv",
+					"$(PROJECT_DIR)/virtualenvs/pythonenv/lib/python2.7/config",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukeweaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -308,6 +313,13 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/virtualenvs/.venv",
+					"$(PROJECT_DIR)/virtualenvs/.venv/lib/python3.5/config-3.5m",
+					"$(PROJECT_DIR)/virtualenvs/pythonenv",
+					"$(PROJECT_DIR)/virtualenvs/pythonenv/lib/python2.7/config",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukeweaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
